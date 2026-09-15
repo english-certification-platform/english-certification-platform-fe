@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to AptisPrep">
+  <title>Sign in · AptisPrep</title>
+  <link rel="stylesheet" href="/assets/css/app.css" th:href="@{/css/app.css}">
+</head>
+<body class="auth-page">
+  <main class="auth-shell">
+    <section class="auth-visual" aria-labelledby="welcome-title">
+      <a class="brand brand--light" href="/" th:href="@{/}"><span class="brand__mark">A</span>AptisPrep</a>
+      <div class="auth-visual__content">
+        <p class="eyebrow eyebrow--light">Build confidence. Track progress.</p>
+        <h1 id="welcome-title">Your focused path to a stronger English score.</h1>
+        <p>Practise realistic Aptis tasks, understand every answer, and see exactly where to improve next.</p>
+      </div>
+      <div class="auth-proof"><strong>12,400+</strong><span>practice sessions completed</span></div>
+    </section>
+
+    <section class="auth-form-panel" aria-labelledby="signin-title">
+      <div class="auth-card">
+        <div class="mobile-brand"><span class="brand__mark">A</span>AptisPrep</div>
+        <p class="eyebrow">Welcome back</p>
+        <h2 id="signin-title">Sign in to continue</h2>
+        <p class="muted">Use the account provided by your learning centre.</p>
+
+        <div class="alert alert--error" role="alert" th:if="${param.error}">Email or password is incorrect.</div>
+        <div class="alert alert--success" role="status" th:if="${param.registered}">Account created. You can sign in now.</div>
+
+        <form class="form-stack" action="/login" th:action="@{/login}" method="post">
+          <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="username" type="email" autocomplete="email" placeholder="you@example.com" required autofocus>
+          </div>
+          <div class="field">
+            <div class="field__label-row"><label for="password">Password</label><a href="/forgot-password" th:href="@{/forgot-password}">Forgot password?</a></div>
+            <div class="password-field">
+              <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="8" required>
+              <button type="button" class="icon-button password-toggle" aria-label="Show password" aria-controls="password">Show</button>
+            </div>
+          </div>
+          <label class="check-row"><input type="checkbox" name="remember-me"><span>Keep me signed in on this device</span></label>
+          <button class="button button--primary button--block" type="submit">Sign in</button>
+        </form>
+
+        <p class="auth-switch">New to AptisPrep? <a href="/register" th:href="@{/register}">Create an account</a></p>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/app.js" th:src="@{/js/app.js}" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,2 @@
+.audio-player,.writing-tools,.speaking-tools{display:grid;gap:12px}.reading-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}.reading-pane{max-height:460px;overflow:auto}.word-counter{color:var(--muted);font-size:.8rem}.recording-indicator{display:flex;align-items:center;gap:8px;color:var(--danger)}.waveform{height:36px;background:repeating-linear-gradient(90deg,var(--primary-soft) 0 3px,transparent 3px 8px);border-radius:4px}@media(max-width:820px){.reading-layout{grid-template-columns:1fr}.reading-pane{max-height:300px}}
+
