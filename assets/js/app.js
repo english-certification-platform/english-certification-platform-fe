@@ -1,3 +1,15 @@
+import { loadDemoDatabase, resetDemoDatabase, saveDemoDatabase } from "./demoDatabase.js";
+
+const demoDatabase = loadDemoDatabase();
+window.aptisPrepDemo = {
+  database: demoDatabase,
+  save: () => saveDemoDatabase(demoDatabase),
+  reset: () => {
+    window.aptisPrepDemo.database = resetDemoDatabase();
+    return window.aptisPrepDemo.database;
+  },
+};
+
 const toggle = document.querySelector(".password-toggle");
 if (toggle) toggle.addEventListener("click", () => { const input = document.getElementById(toggle.getAttribute("aria-controls")); const reveal = input.type === "password"; input.type = reveal ? "text" : "password"; toggle.textContent = reveal ? "Hide" : "Show"; toggle.setAttribute("aria-label", reveal ? "Hide password" : "Show password"); });
 const menuButton = document.querySelector("[data-menu-toggle]"), sidebar = document.querySelector("[data-sidebar]");
