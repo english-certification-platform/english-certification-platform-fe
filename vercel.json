@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    { "source": "/login", "destination": "/index.html" },
+    { "source": "/register", "destination": "/register.html" },
+    { "source": "/student", "destination": "/student/dashboard.html" },
+    { "source": "/student/dashboard", "destination": "/student/dashboard.html" },
+    { "source": "/student/certifications", "destination": "/student/certifications.html" },
+    { "source": "/student/topics", "destination": "/student/topics.html" },
+    { "source": "/student/tests", "destination": "/student/mock-test.html" },
+    { "source": "/student/history", "destination": "/student/history.html" },
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/admin/questions", "destination": "/admin/questions.html" },
+    { "source": "/admin/tests", "destination": "/admin/tests.html" },
+    { "source": "/admin/users", "destination": "/admin/users.html" },
+    { "source": "/admin/analytics", "destination": "/admin/analytics.html" }
+  ]
+}

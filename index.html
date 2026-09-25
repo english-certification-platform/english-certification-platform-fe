@@ -46,6 +46,18 @@
           <button class="button button--primary button--block" type="submit">Sign in</button>
         </form>
 
+        <div class="demo-login" aria-labelledby="demo-login-title">
+          <div>
+            <p class="eyebrow">Quick demo</p>
+            <h3 id="demo-login-title">Explore with a demo account</h3>
+            <p class="muted">No password or backend is required for this preview.</p>
+          </div>
+          <div class="demo-login__actions">
+            <button class="button button--secondary" type="button" data-demo-login="student">Student demo</button>
+            <button class="button button--secondary" type="button" data-demo-login="admin">Admin demo</button>
+          </div>
+        </div>
+
         <p class="auth-switch">New to AptisPrep? <a href="/register" th:href="@{/register}">Create an account</a></p>
       </div>
     </section>
